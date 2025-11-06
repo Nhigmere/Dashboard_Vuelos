@@ -1,0 +1,444 @@
+:root {
+    --fondo-sidebar: #4A5F57;
+    --fondo-sidebar-oscuro: #3C4E47;
+    --fondo-principal: #F5F7F9;
+    --fondo-tarjeta-claro: #FFFFFF;
+    --texto-oscuro: #333333;
+    --texto-medio: #666666;
+    --texto-claro: #AAAAAA;
+    --acento-amarillo: #D4A846;
+    --acento-naranja: #EB9B3A;
+    --acento-verde: #5BB09D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #EBF3F1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.contenedor-dashboard {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    max-width: 1400px;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.barra-lateral {
+    background-color: var(--fondo-sidebar);
+    color: #fff;
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px 0 0 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.barra-lateral::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background-color: var(--acento-amarillo);
+    border-radius: 50%;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+.encabezado-sidebar {
+    margin-bottom: 30px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.tarjeta-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.foto-perfil {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 10px;
+}
+
+.info-perfil h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.info-perfil span {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.menu-principal {
+    flex-grow: 1;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.menu-principal ul {
+    list-style: none;
+}
+
+.menu-principal li {
+    margin-bottom: 15px;
+}
+
+.menu-principal a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.menu-principal a i {
+    margin-right: 15px;
+    font-size: 1.1em;
+    width: 20px;
+    text-align: center;
+}
+
+.menu-principal li.active a,
+.menu-principal a:hover {
+    background-color: var(--acento-amarillo);
+    color: var(--texto-oscuro);
+    font-weight: bold;
+}
+
+.menu-principal li.active a i,
+.menu-principal a:hover i {
+    color: var(--texto-oscuro);
+}
+
+.tarjeta-usuarios-activos {
+    background-color: var(--fondo-sidebar-oscuro);
+    padding: 20px;
+    margin: 0 20px 20px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.tarjeta-usuarios-activos h4 {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.avatares-usuarios {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+.avatares-usuarios img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--fondo-sidebar-oscuro);
+    margin-right: -10px;
+    object-fit: cover;
+    background-color: #fff;
+}
+
+.avatares-usuarios .mas-usuarios {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--acento-amarillo);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: 15px;
+    border: 2px solid var(--fondo-sidebar-oscuro);
+}
+
+.mapa-mundi {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.mapa-mundi img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.contenido-principal {
+    background-color: var(--fondo-tarjeta-claro);
+    padding: 30px;
+    border-radius: 0 25px 25px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cuadricula-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.tarjeta {
+    background-color: var(--fondo-tarjeta-claro);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contenido-tarjeta {
+    z-index: 1;
+}
+
+.tarjeta h4 {
+    font-size: 0.9em;
+    color: var(--texto-medio);
+    margin-bottom: 5px;
+}
+
+.tarjeta .precio,
+.tarjeta .conteo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--texto-oscuro);
+}
+
+.icono-tarjeta {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.icono-boeing {
+    background-color: #FEEED0;
+}
+
+.icono-airbus {
+    background-color: #D2E4DF;
+}
+
+.avion-tarjeta {
+    position: static;
+    width: 35px;
+    height: auto;
+    opacity: 1;
+    z-index: 0;
+}
+
+.mapa-tarjeta {
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    width: 120px;
+    opacity: 0.3;
+}
+
+.tarjeta-boeing {
+    background-color: var(--fondo-tarjeta-claro);
+}
+
+.tarjeta-airbus {
+    background-color: var(--fondo-tarjeta-claro);
+}
+
+.tarjeta-vuelos-totales {
+    background-color: #FFFFFF;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    align-items: flex-end;
+}
+.tarjeta-vuelos-totales h4, .tarjeta-vuelos-totales .conteo {
+    color: #4A5F57;
+    z-index: 1;
+}
+.tarjeta-vuelos-totales .mapa-tarjeta {
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.cuadricula-secciones-principal {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.seccion {
+    background-color: var(--fondo-tarjeta-claro);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.seccion h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--texto-oscuro);
+    margin-bottom: 5px;
+}
+
+.seccion p {
+    font-size: 0.8em;
+    color: var(--texto-claro);
+    margin-bottom: 20px;
+}
+
+.ultimos-viajes {
+    grid-column: 1 / 2;
+    min-height: 280px;
+}
+
+.encabezado-tabla-viajes {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1fr;
+    gap: 10px;
+    font-size: 0.8em;
+    color: var(--texto-claro);
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.item-viaje {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.item-viaje:last-child {
+    border-bottom: none;
+}
+
+.info-miembro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-miembro .foto-miembro {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info-miembro span {
+    font-weight: 600;
+    color: var(--texto-oscuro);
+}
+
+.info-miembro small {
+    font-size: 0.75em;
+    color: var(--texto-claro);
+}
+
+.item-viaje .insignia {
+    background-color: var(--acento-amarillo);
+    color: var(--texto-oscuro);
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.grafica-estadisticas {
+    grid-column: 2 / 3;
+    min-height: 280px;
+}
+
+.grafica-distribucion-vuelos {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    margin-top: 20px;
+    min-height: 280px;
+}
+
+.grafica-calendario-vuelos {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    margin-top: 20px;
+    min-height: 280px;
+}
+
+.contenedor-grafica {
+    position: relative;
+    height: 200px;
+    width: 100%;
+}

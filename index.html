@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Vuelos</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0/dist/chartjs-plugin-datalabels.min.js"></script>
+</head>
+<body>
+    <div class="contenedor-dashboard">
+        <aside class="barra-lateral">
+            <div class="encabezado-sidebar">
+                <div class="tarjeta-perfil">
+                    <img src="https://media.istockphoto.com/id/1327765575/es/foto/retrato-de-una-hermosa-mujer-asi%C3%A1tica-con-el-pelo-largo-y-oscuro-ri%C3%A9ndose-de-la-c%C3%A1mara-con-una.jpg?s=612x612&w=0&k=20&c=jhjVYGUhV3IVqxsPT4XO3BMNo_nJbPpYGf7Vp8ij7XY=" alt="Alex Johnson" class="foto-perfil">
+                    <div class="info-perfil">
+                        <h3>ALEX JOHNSON</h3>
+                        <span>alex.johnson@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="menu-principal">
+                <ul>
+                    <li><a href="#"><i class="fas fa-th-large"></i> DASHBOARD</a></li>
+                    <li><a href="#"><i class="fas fa-plane"></i> FLIGHTS</a></li>
+                    <li><a href="#"><i class="fas fa-wallet"></i> WALLET</a></li>
+                    <li class="active"><a href="#"><i class="fas fa-file-alt"></i> REPORTS</a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i> STATISTICS</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> SETTINGS</a></li>
+                </ul>
+            </nav>
+            <div class="tarjeta-usuarios-activos">
+                <h4>ACTIVE USERS</h4>
+                <div class="avatares-usuarios">
+                    <img src="https://st2.depositphotos.com/1662991/8837/i/450/depositphotos_88370500-stock-photo-mechanic-wearing-overalls.jpg" alt="User 1">
+                    <img src="https://st.depositphotos.com/1269204/1219/i/950/depositphotos_12196477-stock-photo-smiling-men-isolated-on-the.jpg" alt="User 2">
+                    <img src="https://media.istockphoto.com/id/1388648617/es/foto/joven-cauc%C3%A1sico-confiado-con-ropa-casual-de-mezclilla-con-los-brazos-cruzados-mirando-a-la.jpg?s=612x612&w=0&k=20&c=TXOVrBbKuOCwjQTt4kOU7IPb0M7qyxsmUO2-oV9DVmw=" alt="User 3">
+                    <span class="mas-usuarios">+70</span>
+                </div>
+                <div class="mapa-mundi">
+                    <img src="https://via.placeholder.com/200x100/4A5F57/D4A846?text=MAP" alt="World Map">
+                </div>
+            </div>
+        </aside>
+
+        <main class="contenido-principal">
+            
+            <div class="cuadricula-tarjetas">
+                <div class="tarjeta tarjeta-boeing">
+                    <div class="contenido-tarjeta">
+                        <h4>Boeing 767</h4>
+                        <span class="precio">$548</span>
+                    </div>
+                    <div class="icono-tarjeta icono-boeing">
+                        <img src="https://img.icons8.com/color/1200/airplane-front-view.jpg" alt="Boeing 767" class="avion-tarjeta">
+                    </div>
+                </div>
+                <div class="tarjeta tarjeta-airbus">
+                    <div class="contenido-tarjeta">
+                        <h4>Airbus 811</h4>
+                        <span class="precio">$620</span>
+                    </div>
+                    <div class="icono-tarjeta icono-airbus">
+                        <img src="https://img.icons8.com/color/1200/airplane-front-view.jpg" alt="Airbus 811" class="avion-tarjeta">
+                    </div>
+                </div>
+                <div class="tarjeta tarjeta-vuelos-totales">
+                    <div class="contenido-tarjeta">
+                        <h4>Total Flights</h4>
+                        <span class="conteo">850</span>
+                    </div>
+                    <img src="https://img.icons8.com/color/1200/airplane-take-off--v1.jpg" alt="World Map" class="mapa-tarjeta">
+                </div>
+            </div>
+
+            <div class="cuadricula-secciones-principal">
+                <div class="seccion ultimos-viajes">
+                    <h3>Last Trips</h3>
+                    <p>Overview of latest month</p>
+                    <div class="encabezado-tabla-viajes">
+                        <span>Members</span>
+                        <span>Flight</span>
+                        <span>Total Members</span>
+                        <span>Ticket Price</span>
+                    </div>
+                    <div class="item-viaje">
+                        <div class="info-miembro">
+                            <img src="https://media.istockphoto.com/id/1171169099/es/foto/hombre-con-brazos-cruzados-aislados-sobre-fondo-gris.jpg?s=612x612&w=0&k=20&c=8qDLKdLMm2i8DHXY6crX6a5omVh2IxqrOxJV2QGzgFg=" alt="John Doe" class="foto-miembro">
+                            <span>John Doe</span>
+                            <small>john@gmail.com</small>
+                        </div>
+                        <span>Qatar</span>
+                        <span class="insignia">1</span>
+                        <span>$56k</span>
+                    </div>
+                    <div class="item-viaje">
+                        <div class="info-miembro">
+                            <img src="https://media.istockphoto.com/id/2149970248/es/foto/portrait-of-happy-man-wearing-jeans-shirt.jpg?s=612x612&w=0&k=20&c=l6zxvcpXxpYSTXg43m8kOsaP3t3qoCyJLuGs7xdBQfQ=" alt="Martin Loiness" class="foto-miembro">
+                            <span>Martin Loiness</span>
+                            <small>martin_loi@gmail.com</small>
+                        </div>
+                        <span>Emirates</span>
+                        <span class="insignia">2</span>
+                        <span>$56k</span>
+                    </div>
+                </div>
+
+                <div class="seccion grafica-estadisticas">
+                    <h3>Statistics</h3>
+                    <div class="contenedor-grafica">
+                        <canvas id="graficaEstadisticas"></canvas>
+                    </div>
+                </div>
+
+                <div class="seccion grafica-distribucion-vuelos">
+                    <h3>Flights Share</h3>
+                    <div class="contenedor-grafica">
+                        <canvas id="graficaDistribucionVuelos"></canvas>
+                    </div>
+                </div>
+
+                <div class="seccion grafica-calendario-vuelos">
+                    <h3>Flights Schedule</h3>
+                    <div class="contenedor-grafica">
+                        <canvas id="graficaCalendarioVuelos"></canvas>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="estilos.js"></script>
+</body>
+</html>
